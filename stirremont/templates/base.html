@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="description" content="{{ meta_description }}">
+    <meta name="keywords" content="{{ meta_keywords }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'services/img/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'services/img/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'services/img/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'services/img/favicons/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static 'services/img/favicons/safari-pinned-tab.svg' %}" color="#2e688c">
+    <meta name="msapplication-TileColor" content="#2e688c">
+    <meta name="theme-color" content="#2e688c">
+    <link rel="stylesheet" href="{% static 'services/css/style.css' %}">
+    <title>{{ info.title }}</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__info">
+                        <div class="header__title">
+                            {{ info.title }}
+                        </div>
+                        <ul class="header__list">
+                            {% for desc_item in info.brief_info_list %}
+                            <li>{{ desc_item }}</li>
+                            {% endfor %}
+                        </ul>
+                        <div class="header__contacts">
+                            {{ info.name }} {{ info.phone }}
+                        </div>
+                        <div class="header__schedule">
+                            {{ info.schedule }}
+                        </div>
+                    </div>
+                    <div class="header__logo">
+                        <img src="{% static 'services/img/logo.svg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <nav class="menu">
+            {% for m in menu %}
+            <div class="menu__link redirect-button">
+                <a href="{% url m.url_name %}">{{ m.title }}</a>
+            </div>
+            {% endfor %}
+        </nav>
+
+        <div class="content">
+            <div class="container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__row">
+                    <div class="footer__text">
+                        {{ info.footer }}
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

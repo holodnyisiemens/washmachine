@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="columns">   
+        <div class="columns__row">
+            {% for s in services %}
+            <div class="columns__column">
+                <div class="columns__item item">
+                    <div class="item__title title">
+                        {{ s.title }}
+                    </div>
+                    <div class="item__button redirect-button">
+                        <a href="{{ s.get_absolute_url }}">Описание</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

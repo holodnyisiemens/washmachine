@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="description">
+    <div class="description__item item">
+        <div class="item__title title">
+            {{ s.title }}
+        </div>
+        <div class="item__text text">
+            {{ s.content|linebreaks }}
+        </div>
+        <div class="item__button redirect-button">
+            <a href="{% url 'home' %}">Вернуться к услугам</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

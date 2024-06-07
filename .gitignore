@@ -1,0 +1,7 @@
+.env
+
+djenv
+
+*__pycache__
+
+*.sqlite3

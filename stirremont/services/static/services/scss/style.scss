@@ -1,0 +1,215 @@
+@import "_nullstyle";
+
+$white:#F2F2F2;
+$light_blue:#AED3F2;
+$blue:#4586BF;
+$dark_blue:#2E688C;
+$grey:#486773;
+
+$main_fz:calc(15px + 0.390625vw);
+$main_lh:calc(20px + 0.390625vw);
+$medium_fw:500;
+
+$big_fz:calc(20px + 0.390625vw);
+$big_lh:calc(30px + 0.390625vw);
+$bold_fw:700;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Medium.eot');
+    src: url('../fonts/Roboto-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Medium.woff2') format('woff2'),
+        url('../fonts/Roboto-Medium.woff') format('woff'),
+        url('../fonts/Roboto-Medium.ttf') format('truetype'),
+        url('../fonts/Roboto-Medium.svg#Roboto-Medium') format('svg');
+    font-weight: $medium_fw;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.eot');
+    src: url('../fonts/Roboto-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Roboto-Bold.woff2') format('woff2'),
+        url('../fonts/Roboto-Bold.woff') format('woff'),
+        url('../fonts/Roboto-Bold.ttf') format('truetype'),
+        url('../fonts/Roboto-Bold.svg#Roboto-Bold') format('svg');
+    font-weight: $bold_fw;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin font_traits($fz, $lh, $fw) {
+	font-size: $fz;
+	line-height: $lh;
+	font-weight: $fw;
+}
+
+body {
+	@include font_traits($main_fz, $main_lh, $medium_fw);
+	font-family: 'Roboto';
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background-color: $light_blue;
+}
+
+.redirect-button a {
+	color: $blue;
+	&:hover {
+		color: $dark_blue;
+		text-decoration: underline;
+	}
+}
+
+.container {
+	max-width: 96%;
+	margin: 0 auto;
+}
+
+.header {
+	background-color: $blue;
+	padding: 2% 0;
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	&__info {
+		color: $white;
+		text-shadow: 2px 2px 2px $grey;
+		@include font_traits($big_fz, $big_lh, $bold_fw);
+		padding-right: 5%;
+		text-align: center;
+		flex: 0 0 65%;
+		@media (max-width:625px) {
+			flex: 0 0 100%;
+		}
+	}
+	
+	&__title {
+		text-decoration: underline;
+	}
+	
+	&__list {
+		margin: 2% 0;
+	}
+	
+	&__list li {
+		&:before {
+			content: '✔ ';
+		}
+	}
+	
+	&__contacts {
+		text-decoration: underline;
+	}
+	
+	&__schedule {
+		text-decoration: underline;
+	}
+	
+	&__logo {
+		flex: 0 0 25%;
+	
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.menu {
+	@include font_traits($big_fz, $big_lh, $medium_fw);
+	background-color: $white;
+	display: flex;
+	justify-content: center;
+
+	&__link {
+		margin: 0 5%;
+	}
+}
+
+.content {
+	flex: 1 1 auto;
+}
+
+.columns {
+	padding: 1% 0;
+	margin: 0 -1%;
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+
+	&__column {
+		margin: 1%;
+		flex: 1 1 30%;
+		display: flex;
+	}
+
+	&__item {
+		flex: 1 1 auto;
+	}
+
+	@media (max-width:400px) {
+		margin-right: 1%;;
+		&__column {
+			flex: 0 0 100%;
+		}
+	}
+}
+
+.description {
+	margin: 2% 0;
+	// &__item {
+
+	// }
+}
+
+.item {
+	background-color: $white;
+	padding: 1vw;
+	border-radius: 1vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__title {
+		font-weight: 700;
+		color: $grey;
+	}
+
+	&__text {
+		margin: 1% 0;
+		color: $grey;
+	}
+
+	// &__button {
+
+	// }
+}
+
+.footer {
+	background-color: $blue;
+
+	&__row {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 4%;
+	}
+
+	&__text {
+		@include font_traits($main_fz, $main_lh, $bold_fw);
+		color: $white;
+	}
+}

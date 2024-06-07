@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="columns">   
+    <div class="columns__row">
+        {% for i in info.more_info_list %}
+        <div class="columns__column">
+            <div class="columns__item item">
+                <div class="item__title title">
+                    {{ i }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

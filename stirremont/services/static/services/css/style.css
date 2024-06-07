@@ -1,0 +1,241 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.eot");
+  src: url("../fonts/Roboto-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff"), url("../fonts/Roboto-Medium.ttf") format("truetype"), url("../fonts/Roboto-Medium.svg#Roboto-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Bold.eot");
+  src: url("../fonts/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff"), url("../fonts/Roboto-Bold.ttf") format("truetype"), url("../fonts/Roboto-Bold.svg#Roboto-Bold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  font-size: calc(15px + 0.390625vw);
+  line-height: calc(20px + 0.390625vw);
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #AED3F2;
+}
+
+.redirect-button a {
+  color: #4586BF;
+}
+.redirect-button a:hover {
+  color: #2E688C;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 96%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #4586BF;
+  padding: 2% 0;
+}
+.header__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.header__info {
+  color: #F2F2F2;
+  text-shadow: 2px 2px 2px #486773;
+  font-size: calc(20px + 0.390625vw);
+  line-height: calc(30px + 0.390625vw);
+  font-weight: 700;
+  padding-right: 5%;
+  text-align: center;
+  flex: 0 0 65%;
+}
+@media (max-width: 625px) {
+  .header__info {
+    flex: 0 0 100%;
+  }
+}
+.header__title {
+  text-decoration: underline;
+}
+.header__list {
+  margin: 2% 0;
+}
+.header__list li:before {
+  content: "✔ ";
+}
+.header__contacts {
+  text-decoration: underline;
+}
+.header__schedule {
+  text-decoration: underline;
+}
+.header__logo {
+  flex: 0 0 25%;
+}
+.header__logo img {
+  width: 100%;
+}
+
+.menu {
+  font-size: calc(20px + 0.390625vw);
+  line-height: calc(30px + 0.390625vw);
+  font-weight: 500;
+  background-color: #F2F2F2;
+  display: flex;
+  justify-content: center;
+}
+.menu__link {
+  margin: 0 5%;
+}
+
+.content {
+  flex: 1 1 auto;
+}
+
+.columns {
+  padding: 1% 0;
+  margin: 0 -1%;
+}
+.columns__row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.columns__column {
+  margin: 1%;
+  flex: 1 1 30%;
+  display: flex;
+}
+.columns__item {
+  flex: 1 1 auto;
+}
+@media (max-width: 400px) {
+  .columns {
+    margin-right: 1%;
+  }
+  .columns__column {
+    flex: 0 0 100%;
+  }
+}
+
+.description {
+  margin: 2% 0;
+}
+
+.item {
+  background-color: #F2F2F2;
+  padding: 1vw;
+  border-radius: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item__title {
+  font-weight: 700;
+  color: #486773;
+}
+.item__text {
+  margin: 1% 0;
+  color: #486773;
+}
+
+.footer {
+  background-color: #4586BF;
+}
+.footer__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4%;
+}
+.footer__text {
+  font-size: calc(15px + 0.390625vw);
+  line-height: calc(20px + 0.390625vw);
+  font-weight: 700;
+  color: #F2F2F2;
+}/*# sourceMappingURL=style.css.map */

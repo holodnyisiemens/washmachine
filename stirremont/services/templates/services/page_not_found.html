@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="description">
+    <div class="description__item item">
+        <div class="item__title title">
+            Ошибка 404: Страница не найдена
+        </div>
+        <div class="item__button redirect-button">
+            <a href="{% url 'home' %}">Перейти на главную страницу</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
