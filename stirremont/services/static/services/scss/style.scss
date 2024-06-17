@@ -46,6 +46,19 @@ $bold_fw:700;
 	font-weight: $fw;
 }
 
+.title {
+	& h1 {
+		font-weight: $bold_fw;
+	}
+	& h2 {
+		font-weight: $bold_fw;
+	}
+}
+
+.text {
+	font-weight: $medium_fw;
+}
+
 body {
 	@include font_traits($main_fz, $main_lh, $medium_fw);
 	font-family: 'Roboto';
@@ -104,6 +117,7 @@ body {
 	}
 	
 	&__list li {
+		color: $white;
 		&:before {
 			content: '✔ ';
 		}

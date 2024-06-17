@@ -3,8 +3,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="description" content="{{ meta_description }}">
-    <meta name="keywords" content="{{ meta_keywords }}">
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta property="og:image" content="{% static 'services/img/logo.svg' %}">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="format-detection" content="telephone=no">
@@ -16,7 +20,6 @@
     <meta name="msapplication-TileColor" content="#2e688c">
     <meta name="theme-color" content="#2e688c">
     <link rel="stylesheet" href="{% static 'services/css/style.css' %}">
-    <title>{{ info.title }}</title>
 </head>
 <body>
     <div class="wrapper">
@@ -24,8 +27,8 @@
             <div class="container">
                 <div class="header__row">
                     <div class="header__info">
-                        <div class="header__title">
-                            {{ info.title }}
+                        <div class="header__title title">
+                            <h1>{{ info.header_title }}</h1>
                         </div>
                         <ul class="header__list">
                             {% for desc_item in info.brief_info_list %}
@@ -54,12 +57,12 @@
             {% endfor %}
         </nav>
 
-        <div class="content">
+        <main class="content">
             <div class="container">
                 {% block content %}
                 {% endblock %}
             </div>
-        </div>
+        </main>
 
         <footer class="footer">
             <div class="container">

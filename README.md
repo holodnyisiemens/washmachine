@@ -6,9 +6,9 @@ Use:
 
 2) Change directory: `cd washmachine`
 
-3) Create virtual environment: Windows - `python -m venv env` | Linux - `python3 -m venv env`
+3) Create virtual environment: Windows - `python -m venv env` | Linux - `python3 -m venv djenv`
 
-4) Activete virtual environment: Windows - `env\Scripts\activate` | Linux - `source env/bin/activate`
+4) Activete virtual environment: Windows - `djenv\Scripts\activate` | Linux - `source djenv/bin/activate`
 
 5) Install packages: Windows - `pip install -r requirements.txt` | Linux - `pip3 install -r requirements.txt`
 
