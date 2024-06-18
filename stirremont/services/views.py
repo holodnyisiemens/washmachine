@@ -7,23 +7,16 @@ menu = [
 ]
 
 header_title = 'Ремонт стиральных машин на дому Нижний Тагил'
-main_description = 'Ремонт стиральных машин на дому Нижний Тагил. Без выходных, телефон: +7(950)206-21-38. Опытный мастер. Низкие цены, гарантия и качественные детали. Выезд бесплатно.'
-main_keywords = '''ремонт стиральных машин на дому нижний тагил, ремонт бытовой техники нижний тагил недорого'''
+main_description = 'Ремонт стиральных машин на дому Нижний Тагил. Тел: +7(950)206-21-38. Без выходных. Опытный мастер. Низкие цены, гарантия и качественные детали. Выезд БЕСПЛАТНО.'
+main_keywords = 'ремонт стиральных машин на дому нижний тагил, ремонт стиральных машин недорого нижний тагил, мастер по ремонту стиральных машин нижний тагил'
 
 info = {
     'header_title': header_title,
     'phone': '+7(950)206-21-38',
     'name': 'Михаил',
     'schedule': 'График 09:00-20:00 без выходных',
-    'footer': 'от 300 рублей за услугу',
-    
-    'brief_info_list': [
-        'Низкие цены',
-        'Качественные детали',
-        'Опыт более 15 лет',
-        'Выдаётся гарантийный талон',
-        'Выезд бесплатно'
-    ],
+
+    'brief_info_list': ['Низкие цены', 'Качественные детали', 'Опыт более 15 лет', 'Выдаётся гарантийный талон', 'Выезд бесплатно'],
 
     'more_info_list': [
         'Работа по договору',
@@ -32,13 +25,15 @@ info = {
         'Есть опыт работы с техникой премиум-класса',
         'Организация работы: у клиента или удаленно',
         'Машины: встраиваемые, отдельно стоящие, под раковину',
-    ]
+    ],
+
+    'footer': 'от 300 рублей за услугу'
 }
 
 def home(request):
     context = {
         'title': header_title,
-        'description': main_description,
+        'description': header_title + '. ' + main_description,
         'keywords': main_keywords,
         'services': Service.objects.filter(is_active=True),
         'menu': menu,
@@ -62,8 +57,8 @@ def about_service(request, service_slug):
 
 def more_info(request):
     context = {
-        'title': header_title,
-        'description': main_description,
+        'title': 'Подробности. ' + header_title,
+        'description': main_description + ' ' + '. '.join(info['more_info_list']),
         'keywords': main_keywords,
         'menu': menu,
         'info': info,
@@ -72,8 +67,8 @@ def more_info(request):
 
 def page_not_found(request, exception):
     context = {
-        'title': header_title,
-        'description': main_description,
+        'title': 'Ошибка 404. ' + header_title,
+        'description': 'Ошибка 404. ' + main_description,
         'keywords': main_keywords,
         'menu': menu,
         'info': info,

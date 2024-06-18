@@ -47,12 +47,7 @@ $bold_fw:700;
 }
 
 .title {
-	& h1 {
-		font-weight: $bold_fw;
-	}
-	& h2 {
-		font-weight: $bold_fw;
-	}
+	font-weight: $bold_fw;
 }
 
 .text {
@@ -113,14 +108,8 @@ body {
 	}
 	
 	&__list {
-		margin: 2% 0;
-	}
-	
-	&__list li {
 		color: $white;
-		&:before {
-			content: '✔ ';
-		}
+		margin: 2% 0;
 	}
 	
 	&__contacts {
@@ -192,7 +181,7 @@ body {
 .item {
 	background-color: $white;
 	padding: 1vw;
-	border-radius: 1vw;
+	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
